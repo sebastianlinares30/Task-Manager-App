@@ -1,17 +1,17 @@
 # Backlog
 
-| Task                             | Due Date |
-| :------------------------------: | :------: |
-| Core Infrastructure of App       | 06/09/26 |
-| Apply OOP Principles             | 06/13/26 |
-| Add/Edit Task Description        | 06/16/26 |
-| Add/Edit Task Priorities         | 06/21/26 |
-| Add/Edit Task Due Date           | 06/25/26 |
-| Associate Tasks to Classes       | 06/29/26 |
-| Group Tasks by Priority Level    | 07/04/26 |
-| Group Tasks by Classes           | 07/08/26 |
-| Highlight Completed Tasks        | 07/12/26 |
-| Implement Method of Saving Tasks | 07/16/26 |
+| Task                             | Due Date | Priority |
+| :------------------------------: | :------: | :------: |
+| Core Infrastructure of App       | 06/09/26 | HIGH     |
+| Apply OOP Principles             | 06/13/26 | MEDIUM   |
+| Add/Edit Task Description        | 06/16/26 | HIGH     |
+| Add/Edit Task Priorities         | 06/21/26 | HIGH     |
+| Add/Edit Task Due Date           | 06/25/26 | HIGH     |
+| Associate Tasks to Classes       | 06/29/26 | MEDIUM   |
+| Group Tasks by Priority Level    | 07/04/26 | LOW      |
+| Group Tasks by Classes           | 07/08/26 | LOW      |
+| Highlight Completed Tasks        | 07/12/26 | LOW      |
+| Implement Method of Saving Tasks | 07/16/26 | LOW      |
 
 ## Task Descriptions
 
