@@ -14,10 +14,10 @@
 
 | Role | Team Member |
 |:--------|:------------:|
-| Scrum Master | Augusto Linares |
-| Developer | Dario Miranda Coreas |
-| Tester | Brandon Reich |
-| Meeting Recorder | Alex Anderson |
+| Scrum Master | Alex Anderson |
+| Developer | Augusto Linares |
+| Tester | Dario Miranda |
+| Meeting Recorder | Dario Miranda |
 
 ### Role Rotation (Bi-Weekly)
 
@@ -26,8 +26,8 @@ Future role rotations will be assigned by team agreement at the end of each two-
 
 | Sprint / Period | Scrum Master | Developer | Tester | Meeting Recorder |
 |:----------------|:--------------|:------------|:---------|:------------------|
-| Weeks 1–2 | Augusto Linares | Dario Miranda Coreas | Brandon Reich | Alex Anderson |
-| Weeks 3–4 |  |  |  |  |
+| Weeks 1–2 | Augusto Linares | Dario Miranda | Brandon Reich | Alex Anderson |
+| Weeks 3–4 | Alex Anderson | Augusto Linares | Dario Miranda | Dario Miranda |
 | Weeks 5–6 |  |  |  |  |
 | Weeks 7–8 |  |  |  |  |
 
