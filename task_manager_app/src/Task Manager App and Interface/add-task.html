@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Task | Task Manager App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="add-task-body">
+
+    <div id="add-task-page">
+        <div id="add-task-field-design">
+
+            <h2>Add Task</h2>
+            <p class="page-description">
+                Enter the task details below.
+            </p>
+
+            <form id="add-task-form">
+                <div class="add-task-form">
+                    <label for="task-name">Task Name:</label>
+                    <input type="text" id="task-name" name="task-name" required>
+                </div>
+
+                <div class="add-task-form">
+                    <label for="due-date">Due Date:</label>
+                    <input type="date" id="due-date" name="due-date" required>
+                </div>
+
+                <button type="submit">Add Task</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="add-task.js"></script>
+
+</body>
+
+</html>
