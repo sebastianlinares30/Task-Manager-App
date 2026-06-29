@@ -100,7 +100,10 @@ body.sign-up-body {
     font-size: 15px;
 }
 
-body.homepage {
+
+/* ---------- VIEW TASK PAGE ---------- */
+
+body.view-task {
     padding: 40px;
 }
 
@@ -121,6 +124,30 @@ body.homepage {
 }
 
 #display-tasks .due-date {
+    text-align: right;
+}
+
+.task-header {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#task-list {
+    grid-column: 1 / span 2;
+}
+
+.task-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.task-row span:last-child {
     text-align: right;
 }
 
