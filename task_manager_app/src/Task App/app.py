@@ -1,6 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
+import os
+
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE_PATH = os.path.join(BASE_DIR, "taskapp.db")
 
 app = Flask(__name__)
 CORS(app)
@@ -11,7 +16,7 @@ def login():
     username = data["username"]
     password = data["password"]
 
-    conn = sqlite3.connect("taskapp.db")
+    conn = sqlite3.connect(DATABASE_PATH)
     cursor = conn.cursor()
     cursor.execute(
         "SELECT id FROM users WHERE email = ? AND password = ?",
@@ -31,7 +36,7 @@ def add_task():
     task_name = data["task_name"]
     due_date = data["due_date"]
 
-    conn = sqlite3.connect("taskapp.db")
+    conn = sqlite3.connect(DATABASE_PATH)
     cursor = conn.cursor()
     cursor.execute(
         "INSERT INTO tasks (user_id, task_name, due_date) VALUES (?, ?, ?)",
@@ -46,7 +51,7 @@ def add_task():
 def get_tasks():
     user_id = request.args.get("user_id")
 
-    conn = sqlite3.connect("taskapp.db")
+    conn = sqlite3.connect(DATABASE_PATH)
     cursor = conn.cursor()
     cursor.execute(
         "SELECT task_name, due_date FROM tasks WHERE user_id = ?", 
