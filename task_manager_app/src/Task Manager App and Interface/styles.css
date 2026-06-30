@@ -197,3 +197,35 @@ body.add-task-body {
 #add-task-form button:hover {
     background-color: #05896b;
 }
+
+#display-tasks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    background-color: white;
+    padding: 20px;
+    width: 1200px;
+    border-radius: 25px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+#display-tasks > p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.task-item {
+    font-weight: normal !important;
+    padding: 15px 0;
+    margin: 0;
+    border-top: 1px solid rgba(161, 161, 161, 0.3); 
+}
+
+.task-name {
+    text-align: left;
+}
+
+.due-date {
+    text-align: right;
+}
