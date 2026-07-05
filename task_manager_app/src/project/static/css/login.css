@@ -1,0 +1,67 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
+    justify-content: end;
+    align-content: center;
+    padding-right: 100px;
+}
+
+form {
+    display: grid;
+    row-gap: 20px;
+    border-top: 1px solid rgba(161, 161, 161, 0.4);
+    padding-top: 25px;
+}
+
+.login-form {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.login-form input {
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding: 10px;
+}
+
+#login-field-design {
+    font-size: 15px;
+    align-content: end;
+    height: 500px;
+    width: 350px;
+    padding: 40px 30px 70px 30px;
+    border-radius: 25px;
+    background-color: white;
+    border: 1px solid rgba(161, 161, 161, 0.7);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+#welcome-text {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    align-content: center;
+    padding-right: 10px;
+    padding-bottom: 300px;
+}
+
+#sign-up {
+    font-weight: bold;
+    color: white;
+    padding-top: 10px;
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    text-decoration: none;
+}
+
+#main-login {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
