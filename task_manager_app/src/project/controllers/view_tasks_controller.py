@@ -22,8 +22,10 @@ def get_tasks():
 
     for task in tasks:
         response.append({
+            "task_id": task.task_id,
             "task_name": task.task_name,
             "due_date": task.due_date
         })
 
     return jsonify(response)
+

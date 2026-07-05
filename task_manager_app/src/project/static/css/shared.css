@@ -30,3 +30,16 @@ button {
 button:hover {
     background-color: #05896b;
 }
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #06A27E;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

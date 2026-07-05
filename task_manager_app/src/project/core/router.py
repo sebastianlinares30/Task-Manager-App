@@ -10,6 +10,7 @@ from controllers.login_controller import login_bp
 from controllers.add_task_controller import add_task_bp
 from controllers.view_tasks_controller import view_tasks_bp
 from controllers.sign_up_controller import sign_up_bp
+from controllers.delete_task_controller import delete_task_bp
 
 
 def register_routes(app):
@@ -21,3 +22,4 @@ def register_routes(app):
     app.register_blueprint(add_task_bp)
     app.register_blueprint(view_tasks_bp)
     app.register_blueprint(sign_up_bp)
+    app.register_blueprint(delete_task_bp)

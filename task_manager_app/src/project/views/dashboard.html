@@ -8,14 +8,18 @@
 </head>
 
 <body class="homepage">
-    <a id="add-task" href="add-task.html">Add Task</a>
+    <div class="dashboard-actions">
+        <a class="dashboard-btn" href="add_task.html">Add Task</a>
+        <button id="delete-mode-btn" class="dashboard-btn delete-btn">Delete Task</button>
+    </div>
 
     <div id="display-tasks">
         <p class="task-name">Task Name</p>
         <p class="due-date">Due Date</p>
     </div>
 
-    <script src="../static/js/home.js" defer></script>
+    <script src="../static/js/dashboard.js" defer></script>
+    <script src="../static/js/delete_task.js" defer></script>
 </body>
 
 </html>

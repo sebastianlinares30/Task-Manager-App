@@ -12,3 +12,5 @@ class ViewTasksService:
 
     def get_tasks(self, user_id: int) -> list[Task]:
         return self.task_repository.get_tasks_by_user(user_id)
+    
+    
