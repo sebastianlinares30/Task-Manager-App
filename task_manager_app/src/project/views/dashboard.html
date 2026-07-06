@@ -8,9 +8,21 @@
 </head>
 
 <body class="homepage">
+
     <div class="dashboard-actions">
-        <a class="dashboard-btn" href="add_task.html">Add Task</a>
-        <button id="delete-mode-btn" class="dashboard-btn delete-btn">Delete Task</button>
+
+        <div class="left-actions">
+            <a class="dashboard-btn" href="add_task.html">Add Task</a>
+
+            <button id="delete-mode-btn" class="dashboard-btn delete-btn">
+                Delete Task
+            </button>
+        </div>
+
+        <button id="logout-btn" class="dashboard-btn logout-btn">
+            Logout
+        </button>
+
     </div>
 
     <div id="display-tasks">
@@ -20,6 +32,8 @@
 
     <script src="../static/js/dashboard.js" defer></script>
     <script src="../static/js/delete_task.js" defer></script>
+    <script src="../static/js/logout.js" defer></script>
+
 </body>
 
 </html>
