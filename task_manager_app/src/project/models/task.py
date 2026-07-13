@@ -11,7 +11,7 @@ class Task:
         user_id: int = None,
         task_name: str = "",
         due_date: str = "",
-        description: str = None,
+        task_description: str = "",
         priority: str = None,
         status: str = None
     ) -> None:
@@ -19,6 +19,6 @@ class Task:
         self.user_id = user_id
         self.task_name = task_name
         self.due_date = due_date
-        self.description = description
+        self.task_description = task_description
         self.priority = priority
         self.status = status

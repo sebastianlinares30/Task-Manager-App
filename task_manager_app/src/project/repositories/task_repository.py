@@ -25,10 +25,10 @@ class TaskRepository:
 
         cursor.execute(
             """
-            INSERT INTO tasks (user_id, task_name, due_date)
-            VALUES (?, ?, ?)
+            INSERT INTO tasks (user_id, task_name, due_date, description)
+            VALUES (?, ?, ?, ?)
             """,
-            (task.user_id, task.task_name, task.due_date)
+            (task.user_id, task.task_name, task.due_date, task.task_description)
         )
 
         conn.commit()
@@ -41,7 +41,7 @@ class TaskRepository:
 
         cursor.execute(
             """
-            SELECT id, user_id, task_name, due_date
+            SELECT id, user_id, task_name, due_date, description
             FROM tasks
             WHERE user_id = ?
             """,
@@ -59,7 +59,8 @@ class TaskRepository:
                 task_id=row[0],
                 user_id=row[1],
                 task_name=row[2],
-                due_date=row[3]
+                due_date=row[3],
+                task_description=row[4]
             )
 
             tasks.append(task)

@@ -5,6 +5,7 @@ document.getElementById("add-task-form").addEventListener("submit", async functi
     e.preventDefault();
 
     const taskName = document.getElementById("task-name").value; // Reads <input id="task-name"> from add-task.html
+    const taskDescription = document.getElementById("task-description").value; // Reads <input type="text" id="task-description" name="task-description"> from add-task.html
     const rawDate = document.getElementById("due-date").value; // Reads <input type="date" id="due-date"> from add-task.html
     const userId = localStorage.getItem("user_id"); // Pulls login data from localStorage
 
@@ -19,6 +20,7 @@ document.getElementById("add-task-form").addEventListener("submit", async functi
         body: JSON.stringify({
             user_id: userId,
             task_name: taskName,
+            task_description: taskDescription,
             due_date: formattedDate
         })
     });

@@ -14,7 +14,8 @@ def add_task():
     task = Task(
         user_id=data["user_id"],
         task_name=data["task_name"],
-        due_date=data["due_date"]
+        due_date=data["due_date"],
+        task_description=data["task_description"]
     )
 
     service = AddTaskService()

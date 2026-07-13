@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", async function () { // Waits until
         nameParagraph.className = "task-item task-name"; // Inserts into <p></p> and get <p class="task-item task-name"></p>
         nameParagraph.textContent = task.task_name; // Inserts text into <p class="task-item task-name"></p> so we get <p class="task-item task-name">EXAMPLE</p>
 
+        const descParagraph = document.createElement("p");
+        descParagraph.className = " task-item task-description";
+        descParagraph.textContent = task.task_description;
+
         const dateParagraph = document.createElement("p"); // Creates <p></p>
         dateParagraph.className = "task-item due-date"; // Inserts into <p></p> and get <p class="task-item due-date"></p>
         dateParagraph.textContent = task.due_date; // Inserts date into <p></p> and get <p class="task-item due-date">01/01/2026</p>
