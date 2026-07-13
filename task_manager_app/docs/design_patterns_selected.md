@@ -20,10 +20,11 @@ this feature is abosultely necessary for group projects for students working on 
  i dont think it would work, becuase as CS majors we often code alone when we have time, and if we have to wait for someone to update the document before we complete tasks it is either going to be too slow, or two or more people would be complating duplicate tasks. i could just text the edititor to update it now, or create a group text, but then you are losing the major benefits of the app.
 ---
 
-## design pattern 2: __________ design pattern
+## design pattern 2: adapter design pattern
 ### What problem does it solve? 
+Allows for two classes to work that might not typically work due to code or format differences. It's like bringing a US outlet adapter to vacation in the EU. It allows for the outlet to still function while the adapter bridges the connection for these 2 very different outlet types. 
 ### Is it necessary, or would a basic implementation work? 
-### Avoid forcing patterns—document alternatives considered.
+A basic implementation would work for the current project we are working on. There are benefits that I can think of, such as, adapting to different database formats to still properly display for the UI. Ultimately, a basic implementation would work.
 
 ---
 
