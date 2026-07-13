@@ -21,6 +21,7 @@ class UserRepository:
         )
 
         result = cursor.fetchone()
+        # will remove the close connection beucase other need to use the same instance so we dont want one person to close it
         conn.close()
 
         return result
@@ -38,4 +39,5 @@ class UserRepository:
     )
 
         conn.commit()
+        # will remove the close connection beucase other need to use the same instance so we dont want one person to close it
         conn.close()
