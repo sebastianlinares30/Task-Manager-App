@@ -17,8 +17,3 @@ class AddTaskService:
 
         return {"success": True}
 
-# 1. Create a single, shared instance of the Repository
-# task_repository_instance = TaskRepository()
-
-# 2. Create a single, shared instance of the Service
-# add_task_service_instance = AddTaskService()
