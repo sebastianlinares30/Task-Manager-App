@@ -32,6 +32,7 @@ class TaskRepository:
         )
 
         conn.commit()
+        # will remove the close connection beucase other need to use the same instance so we dont want one person to close it
         conn.close()
 
     def get_tasks_by_user(self, user_id: int) -> list[Task]:
@@ -48,6 +49,7 @@ class TaskRepository:
         )
 
         rows = cursor.fetchall()
+        # will remove the close connection beucase other need to use the same instance so we dont want one person to close it
         conn.close()
 
         tasks = []
@@ -84,4 +86,5 @@ class TaskRepository:
 
         # Save the changes and release the database connection.
         conn.commit()
+        # will remove the close connection beucase other need to use the same instance so we dont want one person to close it
         conn.close()
