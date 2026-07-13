@@ -27,7 +27,7 @@ this feature is abosultely necessary for group projects for students working on 
 
 ---
 
-## design pattern 2: __________ design pattern
+## design pattern 3: __________ design pattern
 ### What problem does it solve? 
 ### Is it necessary, or would a basic implementation work? 
 ### Avoid forcing patterns—document alternatives considered.
