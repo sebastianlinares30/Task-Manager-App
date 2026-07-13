@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async function () { // Waits until
         nameParagraph.textContent = task.task_name; // Inserts text into <p class="task-item task-name"></p> so we get <p class="task-item task-name">EXAMPLE</p>
 
         const descParagraph = document.createElement("p");
-        descParagraph.className = " task-item task-description";
+        descParagraph.className = "task-item task-description";
         descParagraph.textContent = task.task_description;
 
         const dateParagraph = document.createElement("p"); // Creates <p></p>
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async function () { // Waits until
         nameParagraph.prepend(checkbox);
 
         container.appendChild(nameParagraph); // Appends it into DOM
+        container.appendChild(descParagraph);
         container.appendChild(dateParagraph); // Appends it into DOM
     });   
 });

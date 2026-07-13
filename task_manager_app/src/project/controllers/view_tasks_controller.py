@@ -24,6 +24,7 @@ def get_tasks():
         response.append({
             "task_id": task.task_id,
             "task_name": task.task_name,
+            "task_description": task.task_description,
             "due_date": task.due_date
         })
 
