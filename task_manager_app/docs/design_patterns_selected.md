@@ -28,7 +28,24 @@ A basic implementation would work for the current project we are working on. The
 
 ---
 
-## design pattern 3: __________ design pattern
+## design pattern 3: Strategy design pattern
 ### What problem does it solve? 
+One of the future features in our backlog is allowing the user to organize tasks in different ways, such as:
+
+- Group Tasks by Priority Level
+- Group Tasks by Classes
+- Sort Tasks
+
+Right now, our project follows an MVC structure where the Controller receives the request, the Service processes it, and the Repository retrieves the tasks from the database. That works well because we only have one way to display the task list.
+
+But, by considering future features that add multiple possibilities for grouping and sorting tasks, there could be too many if/else statements required inside the Controller or Service classes to define the way in which the tasks will be grouped. The Strategy design pattern could help us implement an approach where we can encapsulate all the grouping algorithms within separate classes and make it easier to introduce new grouping possibilities.
 ### Is it necessary, or would a basic implementation work? 
+For our current features, such as Add Task Description and Add Task Priority, a basic implementation works perfectly. These features only require adding new fields to the Task model and updating our current MVC flow (Controller → Service → Repository → Database). Using a design pattern there would probably be forcing it because our current architecture already handles those updates well.
+
+The Strategy pattern starts making sense when we implement features like Group Tasks by Priority Level or Group Tasks by Classes. Those features require different ways of organizing the same list of tasks, which is exactly the type of problem the Strategy pattern was designed to solve.
 ### Avoid forcing patterns—document alternatives considered.
+Considering the current architecture of our app, I do not believe that introducing the Strategy design pattern into all future features would be reasonable. For example, features such as Add Task Description and Add Task Priority fit very well within the MVC architecture that we currently use, so applying another design pattern would make the system more complicated.
+
+Also, the solution using if/else statements inside the Controller or Service classes can be applied to task grouping, but after some time of adding new grouping and sorting operations, this solution will be difficult to support.
+
+In my opinion, the Strategy pattern should only be considered when we develop the task grouping and sorting features since this is the place where several algorithms for managing one task list naturally appear.
