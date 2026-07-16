@@ -1,124 +1,175 @@
 # Validation Scenarios
 
-## Scenario 1: Login with Incorrect Password
+## Scenario 1: Create a New User Account
+
+
+## Scenario 2: Login with Incorrect Password
+
+**Precondition:**  
+No user is currently logged in.
 
 **Goal:** Confirm that the application prevents access when an incorrect password is entered.
 
 **Steps:**
-1. Open the login page.
-2. Enter a valid email.
-3. Enter an incorrect password.
-4. Click the Login button.
+1. Open the application.
+2. Verify that the application redirects to the Login page.
+3. Enter the email address of a registered user.
+4. Enter an incorrect password.
+5. Click the **Login** button.
 
 **Expected Result:**  
-The user is not logged in, and an error message is displayed indicating that the credentials are invalid.
+The application should reject the login attempt, display an error message indicating that the credentials are invalid, and remain on the Login page.
 
 **Actual Result:**  
-The application rejected the login attempt and displayed an error message.
+The application rejected the login attempt, displayed the invalid credentials message, and did not redirect the user to the Dashboard.
 
 **Observation:**  
-This validates that authentication correctly checks user credentials before granting access.
+This confirms that the authentication process validates the user's password before granting access to the application.
 
 **Screenshot:**  
-![Scenario 1](screenshots/scenario1.png)
+![Login with Incorrect Password](screenshots/scenario2.png)
 
-## Scenario 2: Login with Invalid Username
+## Scenario 3: Login with an Unregistered Email
+
+**Precondition:**  
+No user is currently logged in.
 
 **Goal:**  
-Verify that the application denies access when a user enters an email that is not registered.
+Verify that the application prevents access when a user enters an email address that is not registered.
 
 **Steps:**
-1. Open the login page.
-2. Enter an email address that is not registered.
-3. Enter a valid password.
-4. Click **Login**.
+1. Open the application.
+2. Verify that the application redirects to the Login page.
+3. Enter an email address that is not registered.
+4. Enter any password.
+5. Click the **Login** button.
 
 **Expected Result:**  
-The user is not logged in, and an error message is displayed indicating that the username or password is invalid.
+The application should reject the login attempt, display an error message indicating that the credentials are invalid, and remain on the Login page.
 
 **Actual Result:**  
-The application rejected the login attempt and displayed an error message.
+The application rejected the login attempt, displayed the invalid credentials message, and did not redirect the user to the Dashboard.
 
 **Observation:**  
-The authentication process correctly verifies that the username exists before allowing access.
+This confirms that the authentication process verifies that the email address exists before granting access to the application.
 
 **Screenshot:**  
-![Scenario 2](screenshots/scenario2.png)
+![Login with an Unregistered Email](screenshots/scenario3.png)
 
-## Scenario 3: User Login
+## Scenario 4: User Login
 
-**Goal:** Confirm that a user can log in with valid credentials.
-
-**Steps:**
-1. Open the login page.
-2. Enter a valid email and password.
-3. Click the Login button.
-
-**Expected Result:**  
-The user is redirected to the task page.
-
-**Actual Result:**  
-The login worked correctly and the user was redirected.
-
-**Observation:**  
-This confirms the controller correctly communicates with the database and view.
-
-**Screenshot:**  
-![Scenario 3](screenshots/scenario3.png)
-
-## Scenario 4: Add Task Without a Task Name
+**Precondition:**  
+No user is currently logged in.
 
 **Goal:**  
-Verify that the application prevents users from creating a task when the task name field is left empty.
+Verify that a registered user can successfully log in with valid credentials.
 
 **Steps:**
-1. Open the login page.
-2. Enter valid user credentials.
-3. Click the **Login** button.
-4. Confirm that the application loads the **Home Page**, where the current tasks are displayed.
-5. Click the **Add Task** button/link.
-6. Leave the **Task Name** field empty.
+1. Open the application.
+2. Verify that the application redirects to the Login page.
+3. Enter the email address and password of a registered user.
+4. Click the **Login** button.
+
+**Expected Result:**  
+The application should authenticate the user successfully and redirect the user to the Dashboard page.
+
+**Actual Result:**  
+The application authenticated the user successfully and redirected the user to the Dashboard page.
+
+**Observation:**  
+This confirms that the authentication process validates the user's credentials, retrieves the correct user account, and grants access to the Dashboard.
+
+**Screenshot:**  
+![User Login](screenshots/scenario4.png)
+![User Login](screenshots/scenario4a.png)
+
+## Scenario 5: Add Task with Missing Required Fields
+
+**Precondition:**  
+A user is logged in and is viewing the Dashboard.
+
+**Goal:**  
+Verify that the application prevents users from creating a task when any required field is left empty.
+
+### Test Cases
+
+| Test Case | Empty Field | Result |
+|-----------|-------------|--------|
+| 5.1 | Task Name | Passed |
+| 5.2 | Description | Passed |
+| 5.3 | Due Date | Passed |
+
+**Steps:**
+1. Open the application.
+2. Log in using valid user credentials.
+3. Verify that the application redirects to the Dashboard.
+4. Click the **Add Task** button.
+5. Leave one required field empty.
+6. Complete the remaining fields with valid information.
+7. Click the **Add Task** button.
+
+**Expected Result:**  
+The application should prevent the task from being created and display the browser validation message requesting that the required field be completed.
+
+**Actual Result:**  
+The application prevented the task from being created and displayed the browser validation message **"Please fill out this field."**
+
+**Observation:**  
+This confirms that the application enforces validation for all required fields before allowing a task to be created.
+
+### Screenshots
+
+**5.1 Missing Task Name**
+
+![Scenario 5](screenshots/scenario5.png)
+
+**5.2 Missing Description**
+
+![Scenario 5a](screenshots/scenario5a.png)
+
+**5.3 Missing Due Date**
+
+![Scenario 5b](screenshots/scenario5b.png)
+
+## Scenario 6: Add New Task
+
+**Precondition:**  
+A user is logged in and is viewing the Dashboard.
+
+**Goal:**  
+Verify that a logged-in user can successfully create a new task through the GUI.
+
+**Steps:**
+1. Open the application.
+2. Log in using valid user credentials.
+3. Verify that the application redirects to the Dashboard.
+4. Click the **Add Task** button.
+5. Enter a task name.
+6. Enter a task description.
 7. Enter a valid due date.
 8. Click the **Add Task** button.
 
 **Expected Result:**  
-The application should not create the task and should display a validation message indicating that the task name is required.
+The application should save the new task and redirect the user back to the Dashboard, where the newly created task is displayed in the task list.
 
 **Actual Result:**  
-The application prevented the task from being created and displayed the message **"Task name is required."**
+The application successfully created the task, redirected the user to the Dashboard, and displayed the new task in the task list.
 
 **Observation:**  
-This confirms that the application validates user input before saving a task. It also confirms the GUI flow from the Home Page to the Add Task page works correctly.
+This confirms that the application successfully stores a new task and updates the Dashboard to display the newly created task.
 
-**Screenshot:** 
+### Screenshots
 
-![Add Task Without Name](screenshots/scenario4.png)
+**Task successfully created**
 
-## Scenario 5: Add New Task
+![Add New Task](screenshots/scenario6.png)
 
-**Goal:**  
-Verify that a logged-in user can add a new task through the GUI.
+**New task displayed on the Dashboard**
 
-**Steps:**
-1. Open the login page.
-2. Enter valid user credentials.
-3. Click the **Login** button.
-4. Confirm that the application loads the **Home Page**, where current tasks are displayed.
-5. Click the **Add Task** button/link.
-6. Enter a task name.
-7. Enter a valid due date.
-8. Click the **Add Task** button.
+![Add New Task](screenshots/scenario6a.png)
 
-**Expected Result:**  
-The application should save the task and return the user to the Home Page or display the newly added task in the task list.
+## Scenario 7: Display Tasks for the Logged-in User
 
-**Actual Result:**  
-The task was added successfully and displayed on the Home Page.
+## Scenario 8: Delete Task
 
-**Observation:**  
-This confirms the MVC flow: the View collects the task information, the Controller processes the request, the Model/database stores the task, and the updated task list is shown on the Home Page.
-
-### Screenshot
-
-![Add New Task](screenshots/scenario5.png)
-![Add New Task](screenshots/scenario5a.png)
+## Scenario 9: Logout
