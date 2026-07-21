@@ -4,7 +4,12 @@ from flask_cors import CORS
 from core.router import register_routes
 
 
-app = Flask(__name__)
+app = Flask(
+   __name__,
+    template_folder="views",
+    static_folder="static"
+)
+
 CORS(app)
 
 register_routes(app)
