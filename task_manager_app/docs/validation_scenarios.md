@@ -1,7 +1,25 @@
 # Validation Scenarios
 
 ## Scenario 1: Create a New User Account
+**Precondition:**  
 
+
+**Goal:** Confirm that the application prevents access when an incorrect password is entered.
+
+**Steps:**
+1. Open the application.
+
+
+**Expected Result:**  
+
+
+**Actual Result:**  
+
+
+**Observation:**  
+
+
+**Screenshot:**  
 
 ## Scenario 2: Login with Incorrect Password
 
@@ -170,6 +188,66 @@ This confirms that the application successfully stores a new task and updates th
 
 ## Scenario 7: Display Tasks for the Logged-in User
 
+**Precondition:**  
+
+
+**Goal:** Confirm that the application prevents access when an incorrect password is entered.
+
+**Steps:**
+1. Open the application.
+
+
+**Expected Result:**  
+
+
+**Actual Result:**  
+
+
+**Observation:**  
+
+
+**Screenshot:**  
+
 ## Scenario 8: Delete Task
 
+**Precondition:**  
+
+
+**Goal:** Confirm that the application prevents access when an incorrect password is entered.
+
+**Steps:**
+1. Open the application.
+
+
+**Expected Result:**  
+
+
+**Actual Result:**  
+
+
+**Observation:**  
+
+
+**Screenshot:**  
+
 ## Scenario 9: Logout
+
+**Precondition:**  
+
+
+**Goal:** Confirm that the application prevents access when an incorrect password is entered.
+
+**Steps:**
+1. Open the application.
+
+
+**Expected Result:**  
+
+
+**Actual Result:**  
+
+
+**Observation:**  
+
+
+**Screenshot:**  
