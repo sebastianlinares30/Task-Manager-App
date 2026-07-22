@@ -10,18 +10,27 @@ Confirm that the application allows a new user to create an ID and login
 **Steps:**
 1. Open the application.
 2. Verify that the application redirects to the Login page.
+3. user pressed the sign up button
+4. user enters his info
+5. user recieves confirmation they were accepted
+6. user can login with new email and  password
 
 
 **Expected Result:**  
-
+was able to sign up, enter a new user information, and then sign in to the app
 
 **Actual Result:**  
-
+app handled each step correctly
 
 **Observation:**  
+- might be nice to have something other than an alert their profile has been created
+- might be nice to have the users name on the top somewhere to show if they have logged in
 
-
-**Screenshot:**  
+**Screenshot:**
+![login in screen - sign up ](screenshots/scenario1a.png)
+![new user screen ](screenshots/scenario1b.png)
+![alert saying user has been created](screenshots/scenario1c.png)
+![login in as new user](screenshots/scenario1d.png)  
 
 ## Scenario 2: Login with Incorrect Password
 
