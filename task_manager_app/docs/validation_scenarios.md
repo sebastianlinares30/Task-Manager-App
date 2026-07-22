@@ -2,12 +2,14 @@
 
 ## Scenario 1: Create a New User Account
 **Precondition:**  
+No user is currently logged in.
 
-
-**Goal:** Confirm that the application prevents access when an incorrect password is entered.
+**Goal:** 
+Confirm that the application allows a new user to create an ID and login
 
 **Steps:**
 1. Open the application.
+2. Verify that the application redirects to the Login page.
 
 
 **Expected Result:**  
