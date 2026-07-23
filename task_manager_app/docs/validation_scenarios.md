@@ -202,22 +202,28 @@ This confirms that the application successfully stores a new task and updates th
 **Precondition:**  
 
 
-**Goal:** Confirm that the application prevents access when an incorrect password is entered.
+**Goal:** confirm that when logged in existing tasks are displayed
 
 **Steps:**
 1. Open the application.
+2. login
+3. create task
+4. log off
+5. login
 
 
 **Expected Result:**  
+tasks that user creates will persist as users log on and off
 
 
 **Actual Result:**  
-
+task created persisted, as expected
 
 **Observation:**  
+confirmed the application is performing as expected
 
-
-**Screenshot:**  
+**Screenshot:** 
+![Add New Task](screenshots/scenario7a.png) 
 
 ## Scenario 8: Delete Task
 
