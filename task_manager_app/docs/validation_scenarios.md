@@ -199,7 +199,8 @@ This confirms that the application successfully stores a new task and updates th
 
 ## Scenario 7: Display Tasks for the Logged-in User
 
-**Precondition:**  
+**Precondition:** 
+user has an existing account and has existing tasks 
 
 
 **Goal:** confirm that when logged in existing tasks are displayed
@@ -228,43 +229,52 @@ confirmed the application is performing as expected
 ## Scenario 8: Delete Task
 
 **Precondition:**  
+user has an existing account and has existing tasks 
 
-
-**Goal:** Confirm that the application prevents access when an incorrect password is entered.
+**Goal:** Confirm that the application will delete tasks and not show up after re login
 
 **Steps:**
 1. Open the application.
+2. log in
+3. delete existing task
+4. log out
+5. log in to confirm the task is truley gone
 
 
 **Expected Result:**  
-
+tasks are truley deleted and they are not temperairoy deleted
 
 **Actual Result:**  
-
+truely deleted, tasks once deleted no longer exist
 
 **Observation:**  
-
+confirmed the application is performing as expected
 
 **Screenshot:**  
+![Add New Task](screenshots/scenario8a.png) 
+![Add New Task](screenshots/scenario8b.png) 
+![Add New Task](screenshots/scenario8c.png) 
 
 ## Scenario 9: Logout
 
 **Precondition:**  
 
 
-**Goal:** Confirm that the application prevents access when an incorrect password is entered.
+**Goal:** user has an existing account and is logged in
 
 **Steps:**
-1. Open the application.
+1. press the logout button
 
 
 **Expected Result:**  
-
+user can log out
 
 **Actual Result:**  
-
+confimred user can log out
 
 **Observation:**  
-
+our app is pretty polished, nice job guys!!
 
 **Screenshot:**  
+![Add New Task](screenshots/scenario9a.png) 
+![Add New Task](screenshots/scenario9b.png) 
