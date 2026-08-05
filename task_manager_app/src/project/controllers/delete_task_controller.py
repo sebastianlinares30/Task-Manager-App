@@ -9,7 +9,7 @@ Responsibilities:
 - Return the operation result as a JSON response.
 """
 
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, session
 
 from services.delete_task_service import DeleteTaskService
 
@@ -26,9 +26,14 @@ def delete_task():
     # Get the identifier of the task that should be removed.
     task_id = data["task_id"]
 
-    # Delegate the deletion process to the service layer.
+    user_id = session.get("user_id")
+
+    if not user_id:
+        return jsonify({"error": "Unauthorized"}), 401
+
+    
     service = DeleteTaskService()
-    result = service.delete_task(task_id)
+    result = service.delete_task(task_id, user_id)
 
     # Return the result as a JSON response.
     return jsonify(result)

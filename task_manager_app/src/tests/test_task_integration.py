@@ -115,7 +115,7 @@ def test_add_delete_and_view_task_integration(tmp_path, monkeypatch):
 
     task_id = tasks_before_delete[0].task_id
 
-    delete_result = DeleteTaskService().delete_task(task_id)
+    delete_result = DeleteTaskService().delete_task(task_id, 7)
 
     tasks_after_delete = ViewTasksService().get_tasks(7)
 

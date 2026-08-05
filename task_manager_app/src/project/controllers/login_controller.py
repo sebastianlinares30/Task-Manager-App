@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, session
 
 from models.user import User
 from services.login_service import LoginService
@@ -25,5 +25,8 @@ def login():
     service = LoginService()
 
     result = service.login(user)
+
+    if result["success"]:
+        session["user_id"] = result["user_id"]
 
     return jsonify(result)

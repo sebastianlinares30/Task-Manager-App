@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () { // Waits until webpa
         const result = await response.json(); // Takes HTTP response from Flask and converts from JSON to JS
 
         if (result.success) { // Checks if login was valid
-            localStorage.setItem("user_id", result.user_id); // Saves user ID and used in other JS files
+            
             window.location.href = "dashboard.html"; // Sends user to dashboard.html if login was successful
         } else {
             alert("Invalid login"); // Alerts if login is invalid

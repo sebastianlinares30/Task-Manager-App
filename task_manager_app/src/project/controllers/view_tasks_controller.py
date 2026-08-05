@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, jsonify, session
 
 from services.view_tasks_service import ViewTasksService
 
@@ -12,7 +12,10 @@ def get_tasks():
     Retrieves all tasks associated with a user.
     """
 
-    user_id = request.args.get("user_id")
+    user_id = session.get("user_id")
+
+    if not user_id:
+        return jsonify({"error": "Unauthorized"}), 401
 
     service = ViewTasksService()
 

@@ -47,4 +47,4 @@ start ..\docs\tests\htmlcov\index.html
 
 ## Coverage
 
-The project currently contains **32 automated tests**, including **30 unit tests** and **2 integration tests**, with approximately **99% code coverage**.
+The project currently contains **33 automated tests**, including **31 unit tests** and **2 integration tests**. The generated report shows approximately **99% code coverage for the model, service, and repository files included in the report**.

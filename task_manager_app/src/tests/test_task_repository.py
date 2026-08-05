@@ -124,23 +124,24 @@ def test_get_tasks_returns_empty_list(mock_get_connection):
 
 
 @patch("repositories.task_repository.get_connection")
-def test_delete_task_executes_query_with_task_id(mock_get_connection):
-    """Verify that delete_task executes a DELETE query with the correct task ID."""
+def test_delete_task_executes_query_with_task_and_user_id(mock_get_connection):
+    """Verify that delete_task executes a DELETE query with the correct task and user IDs."""
     mock_connection = Mock()
     mock_cursor = Mock()
 
     mock_get_connection.return_value = mock_connection
     mock_connection.cursor.return_value = mock_cursor
+    mock_cursor.rowcount = 1
 
     repository = TaskRepository()
 
-    repository.delete_task(12)
+    repository.delete_task(12, 5)
 
     query, parameters = mock_cursor.execute.call_args.args
 
     assert "DELETE FROM tasks" in query
-    assert "WHERE id = ?" in query
-    assert parameters == (12,)
+    assert "WHERE id = ? AND user_id = ?" in query
+    assert parameters == (12, 5)
 
 
 @patch("repositories.task_repository.get_connection")
@@ -151,10 +152,11 @@ def test_delete_task_commits_and_closes_connection(mock_get_connection):
 
     mock_get_connection.return_value = mock_connection
     mock_connection.cursor.return_value = mock_cursor
+    mock_cursor.rowcount = 1
 
     repository = TaskRepository()
 
-    repository.delete_task(3)
+    repository.delete_task(3, 2)
 
     mock_connection.commit.assert_called_once()
     mock_connection.close.assert_called_once()

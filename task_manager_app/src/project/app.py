@@ -10,6 +10,8 @@ app = Flask(
     static_folder="static"
 )
 
+app.secret_key = "task-manager-secret-key"
+
 CORS(app)
 
 register_routes(app)

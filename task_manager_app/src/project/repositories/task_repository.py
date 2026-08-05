@@ -70,22 +70,25 @@ class TaskRepository:
     """
     Deletes a task from the database using its unique identifier.
     """
-    def delete_task(self, task_id: int) -> None:
+    def delete_task(self, task_id: int, user_id: int) -> bool:
 
         # Open a connection to the SQLite database.
         conn = get_connection()
         cursor = conn.cursor()
 
-        # Delete the task that matches the given identifier.
         cursor.execute(
             """
             DELETE FROM tasks
-            WHERE id = ?
+            WHERE id = ? AND user_id = ?
             """,
-            (task_id,)
+            (task_id, user_id)
         )
+
+        deleted = cursor.rowcount > 0
 
         # Save the changes and release the database connection.
         conn.commit()
         # will remove the close connection beucase other need to use the same instance so we dont want one person to close it
         conn.close()
+
+        return deleted

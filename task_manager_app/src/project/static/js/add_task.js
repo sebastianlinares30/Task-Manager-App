@@ -7,7 +7,7 @@ document.getElementById("add-task-form").addEventListener("submit", async functi
     const taskName = document.getElementById("task-name").value; // Reads <input id="task-name"> from add-task.html
     const taskDescription = document.getElementById("task-description").value; // Reads <input type="text" id="task-description" name="task-description"> from add-task.html
     const rawDate = document.getElementById("due-date").value; // Reads <input type="date" id="due-date"> from add-task.html
-    const userId = localStorage.getItem("user_id"); // Pulls login data from localStorage
+    
 
     // Converts YYYY-MM-DD to MM/DD/YYYY
     const [year, month, day] = rawDate.split("-");
@@ -18,7 +18,7 @@ document.getElementById("add-task-form").addEventListener("submit", async functi
         method: "POST", // POST method means it'll create new data not just request data
         headers: {"Content-Type": "application/json"}, // Tells the server/db the payload is in JSON
         body: JSON.stringify({
-            user_id: userId,
+            
             task_name: taskName,
             task_description: taskDescription,
             due_date: formattedDate

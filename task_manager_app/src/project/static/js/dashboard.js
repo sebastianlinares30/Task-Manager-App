@@ -3,10 +3,10 @@
 document.addEventListener("DOMContentLoaded", async function () { // Waits until webpage is fully loaded/all HTML elements exist
 
     const container = document.getElementById("display-tasks"); // Reads <div id="display-tasks"> from home.html
-    const userId = localStorage.getItem("user_id"); // Pulls login data from localStorage.setItem("user_id", result.user_id); from script.js
+    
     const deleteModeBtn = document.getElementById("delete-mode-btn"); // // Reads <button id="delete-mode-btn"> from dashboard.html
 
-    const response = await fetch(`http://127.0.0.1:5000/get-tasks?user_id=${userId}`); // Calls @app.route("/get-tasks") from app.py
+    const response = await fetch("http://127.0.0.1:5000/get-tasks");
     const tasks = await response.json(); // Converts response into JSON
     
     tasks.forEach(task => { // Runs per task(s)

@@ -9,30 +9,25 @@ from repositories.user_repository import UserRepository
 
 
 @patch("repositories.user_repository.get_connection")
-def test_find_user_returns_matching_user_id(mock_get_connection):
-    """Verify that the repository returns the matching user ID."""
+def test_find_user_returns_matching_user(mock_get_connection):
+    """Verify that the repository returns the matching user data."""
     mock_connection = Mock()
     mock_cursor = Mock()
 
     mock_get_connection.return_value = mock_connection
     mock_connection.cursor.return_value = mock_cursor
-    mock_cursor.fetchone.return_value = (4,)
+    mock_cursor.fetchone.return_value = (4, "hashed_password")
 
     repository = UserRepository()
 
-    user = User(
-        email="test@test.com",
-        password="test123"
-    )
+    result = repository.find_user_by_email("test@test.com")
 
-    result = repository.find_user_by_email_and_password(user)
-
-    assert result == (4,)
+    assert result == (4, "hashed_password")
 
 
 @patch("repositories.user_repository.get_connection")
-def test_find_user_executes_query_with_credentials(mock_get_connection):
-    """Verify that the repository executes the query with the provided credentials."""
+def test_find_user_executes_query_with_email(mock_get_connection):
+    """Verify that the repository executes the query with the provided email."""
     mock_connection = Mock()
     mock_cursor = Mock()
 
@@ -42,18 +37,16 @@ def test_find_user_executes_query_with_credentials(mock_get_connection):
 
     repository = UserRepository()
 
-    user = User(
-        email="user@test.com",
-        password="password"
+    repository.find_user_by_email("user@test.com")
+
+    mock_cursor.execute.assert_called_once_with(
+        """
+            SELECT id, password
+            FROM users
+            WHERE email = ?
+            """,
+        ("user@test.com",)
     )
-
-    repository.find_user_by_email_and_password(user)
-
-    query, parameters = mock_cursor.execute.call_args.args
-
-    assert "SELECT id" in query
-    assert "FROM users" in query
-    assert parameters == ("user@test.com", "password")
 
 
 @patch("repositories.user_repository.get_connection")
@@ -67,9 +60,8 @@ def test_find_user_closes_connection(mock_get_connection):
     mock_cursor.fetchone.return_value = None
 
     repository = UserRepository()
-    user = User(email="test@test.com", password="wrong")
 
-    repository.find_user_by_email_and_password(user)
+    repository.find_user_by_email("test@test.com")
 
     mock_connection.close.assert_called_once()
 

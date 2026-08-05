@@ -7,17 +7,17 @@ class UserRepository:
     Handles database operations related to users.
     """
 
-    def find_user_by_email_and_password(self, user: User):
+    def find_user_by_email(self, email: str):
         conn = get_connection()
         cursor = conn.cursor()
 
         cursor.execute(
             """
-            SELECT id
+            SELECT id, password
             FROM users
-            WHERE email = ? AND password = ?
+            WHERE email = ?
             """,
-            (user.email, user.password)
+            (email,)
         )
 
         result = cursor.fetchone()
@@ -35,8 +35,13 @@ class UserRepository:
             INSERT INTO users (first_name, last_name, email, password)
             VALUES (?, ?, ?, ?)
             """,
-        (user.first_name, user.last_name, user.email, user.password)
-    )
+            (
+                user.first_name, 
+                user.last_name, 
+                user.email, 
+                user.password
+            )
+        )
 
         conn.commit()
         # will remove the close connection beucase other need to use the same instance so we dont want one person to close it
