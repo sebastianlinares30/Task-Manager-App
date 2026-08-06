@@ -1,6 +1,19 @@
 # Task Manager App
 
-This project is a web-based Task Manager application built with Flask following the MVC architecture. The application uses SQLite for data storage and includes automated unit and integration tests to validate the core functionality.
+This project is a web-based Task Manager application built with Flask following the MVC architecture. The application allows multiple users to create accounts and manage their own tasks, including task names, descriptions, and due dates. SQLite is used for data storage, and automated unit and integration tests are included to validate the core functionality.
+
+## Features
+
+The Task Manager application currently supports:
+
+- User registration
+- User login and logout
+- Add tasks
+- View tasks
+- Delete tasks
+- Task descriptions
+- Due dates
+- Multiple user accounts
 
 ## Running the Application
 
@@ -21,6 +34,12 @@ Once the server is running, open your browser and go to:
 ```text
 http://127.0.0.1:5000
 ```
+
+## Security and Robustness Improvements
+
+The application uses Flask sessions to identify authenticated users instead of relying on user IDs provided by the browser. Passwords are stored using password hashing instead of plain text.
+
+Task operations use the authenticated user's ID, and task deletion verifies task ownership to prevent users from deleting tasks that belong to another user.
 
 ## Running the Test Suite
 
@@ -64,6 +83,12 @@ To open it from the `src` directory, run:
 start ..\docs\tests\htmlcov\index.html
 ```
 
+## Testing and Refactoring Outcomes
+
+The automated tests cover the model, service, and repository layers of the application. The authentication tests were updated after implementing password hashing, and task deletion tests were updated to verify task ownership using both the task ID and user ID.
+
+During the final development stage, authentication and task ownership were improved to make the application more secure and maintainable. Additional refactoring and robustness improvements will be documented in the final project documentation -Alex-, -Sebastian-.
+
 ## Tools Used
 
 - Flask
@@ -73,4 +98,16 @@ start ..\docs\tests\htmlcov\index.html
 
 ## Coverage
 
-The project currently contains **32 automated tests**, including **30 unit tests** and **2 integration tests**, with approximately **99% code coverage**.
+The project currently contains **33 automated tests**, including **31 unit tests** and **2 integration tests**. The generated report shows approximately **99% code coverage for the model, service, and repository files included in the report**.
+
+## Screenshots
+
+Application screenshots are available in:
+
+- `task_manager_app/docs/screenshots/`
+
+## Contributors
+
+- Dario Miranda
+- Sebastian
+- Alex
